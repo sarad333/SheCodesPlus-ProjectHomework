@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's the Weather 📍</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/2cdb3eceb5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200&display=swap" rel="stylesheet">
+    <link href="src/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+       <nav class="navbar navbar-light rounded" style="background-color: rgb(202, 227, 247);">
+            <a class="navbar-brand">What's the Weather 📍</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search City..." aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" id="submitForm" type="submit">Search</button>
+            </form>
+        </nav> 
+        <br/>
+ <button id="locationBtn">Current Location</button>
+      <section class="favs">
+      <h3 class="favsTitle">Favourites</h3>
+      <p class="favCities">
+          <ul>
+            <li><a href="#" class="text-muted">Milano</a></li>
+            <li><a href="#" class="text-muted">Madrid</a></li>
+            <li><a href="#" class="text-muted">Lisbon</a></li>
+        </ul>
+        </p></section>
+        
+        <br>
+        <br>
+      <section id="currentWeather"> 
+      <h1 id="currentCityName">Enter a City</h1>
+      <p id = "currentDate"> </p>
+      <img src="images/partialsun.png" alt="partialCloud" width="200px">
+
+      <h2 id="metricT" class="currentTemp" >˚C</h2>
+      <p id="description">current conditions</p></section>
+     <section class="weatherDetails">
+      <div class="row justify-content-center" >
+        <div class="col-1"><strong>High</strong></div>
+        <div class="col-1" id = "highTemp">˚C</div>
+        <div class="col-1"><strong>Low</strong></div>
+        <div class="col-1" id = "lowTemp">˚C</div>
+        <div class="col-2"><strong>Feels Like</strong></div>
+        <div class="col-1" id = "feelsTemp">˚C</div>
+      </div>
+      <br/>
+      </div></section> 
+      <br />
+      <br />
+      <h3>Six Day Forecast</h3>
+
+      <div class="row"> 
+        <div class="col-2"><div class="fiveDays">
+          <b>Sat</b>
+          <div class="row">
+            <div class="col-5">
+                <img src="images/sun.png" alt="sun" width="100px" class="dayPic"> 
+              <div class="row">
+                <div class="col-5">H</div>
+                <div class="col-5">25˚C</div>
+              </div>
+              <div class="row">
+                <div class="col-5">L</div>
+                <div class="col-5">10˚C</div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-2"><div class="fiveDays">
+          Sun
+          <div class="row">
+            <div class="col-5">
+              <img src="images/rain.png" alt="rain" width="100px" class="dayPic">
+              <div class="row">
+                <div class="col-5">H</div>
+                <div class="col-5">25˚C</div>
+              </div>
+              <div class="row">
+                <div class="col-5">L</div>
+                <div class="col-5">10˚C</div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-2"> <div class="fiveDays">
+          Mon
+          <div class="row">
+            <div class="col-5">
+              <img src="images/cloud.png" alt="cloud" width="120px" class="dayPic">
+              <div class="row">
+                <div class="col-5">H</div>
+                <div class="col-5">25˚C</div>
+              </div>
+              <div class="row">
+                <div class="col-5">L</div>
+                <div class="col-5">10˚C</div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-2"> <div class="fiveDays">
+          Tues
+          <div class="row">
+            <div class="col-5">
+              <img src="images/snow.png" alt="snow" width="100px" class="dayPic">
+              <div class="row">
+                <div class="col-5">H</div>
+                <div class="col-5">25˚C</div>
+              </div>
+              <div class="row">
+                <div class="col-5">L</div>
+                <div class="col-5">10˚C</div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-2">
+          <div class="fiveDays">
+            Wed
+            <div class="row">
+              <div class="col-5">
+                <img src="images/partialsun.png" alt="snow" width="100px" class="dayPic">
+                <div class="row">
+                  <div class="col-5">H</div>
+                  <div class="col-5">25˚C</div>
+                </div>
+                <div class="row">
+                  <div class="col-5">L</div>
+                  <div class="col-5">10˚C</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2"> <div class="fiveDays">
+          Thurs
+          <div class="row">
+            <div class="col-5">
+              <img src="images/lightning.png" alt="lightning" width="100px" class="dayPic">
+              <div class="row">
+                <div class="col-5">H</div>
+                <div class="col-5">25˚C</div>
+              </div>
+              <div class="row">
+                <div class="col-5">L</div>
+                <div class="col-5">10˚C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+      <br>
+      <button class="changeUnitM" >˚C </button> <button class="changeUnitF">˚F </button>
+    <footer><small>Coded by <a href="https://www.linkedin.com/in/saradelcastillo333" target="_blank" class="nameLink">Sara del Castillo</a> </small></footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

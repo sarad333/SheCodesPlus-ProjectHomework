@@ -1,0 +1,77 @@
+body {
+  background-image: linear-gradient(
+    -225deg,
+    #5d9fff 0%,
+    #b8dcff 48%,
+    #6bbbff 100%
+  );
+  font-family: "BioRhyme", serif;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px 20px 30px 20px;
+}
+
+.form-inline {
+  float: right;
+  margin-top: 5px;
+}
+.favs {
+  float: right;
+  clear: right;
+  background-color: rgb(245, 245, 245, 0.5);
+  border-radius: 7px;
+  margin-top: 5px;
+  padding: 5px 8px 5px 2px;
+}
+.favsTitle {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+ul {
+  font-size: 14px;
+  list-style-type: none;
+  text-align: right;
+}
+#currentWeather {
+  display: block;
+  margin: 20px 100px 10px 20px;
+  text-align: center;
+}
+.weatherDetails {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.fiveDays {
+  padding: 7px;
+}
+.fiveDays:hover {
+  background-color: rgb(245, 245, 245, 0.3);
+  border-radius: 7px;
+}
+.dayPic {
+  height: 80px;
+  width: 80px;
+}
+
+footer {
+  text-align: right;
+  opacity: 70%;
+  font-size: 11px;
+}
+.nameLink {
+  color: black;
+}
+button {
+  border-radius: 7px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+#locationBtn {
+  display: block;
+  float: right;
+}
